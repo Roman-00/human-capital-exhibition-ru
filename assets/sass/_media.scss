@@ -1,0 +1,92 @@
+@media screen and (max-width: 1140px) {
+	.logo {
+		max-width: 100px;
+		min-height: 42px;
+	}
+
+	.header-exhibition-title {
+		max-width: 450px;
+
+		&__text {
+			font-size: 1rem;
+		}
+	}
+
+	.header-exhibition-date {
+		&__number {
+			font-size: 1rem;
+		}
+
+		&__venue {
+			font-size: 0.8571rem;
+		}
+	} 
+}
+
+@media screen and (max-width: 860px) {
+	.logo {
+		max-width: 120px;
+		min-height: 40px;
+	}
+
+	.header-exhibition-title {
+		display: none;
+
+		&__text {
+			margin-top: 20px;
+			font-size: 1rem;
+			text-align: center;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	.header-exhibition-date {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.top-bar-phone {
+		&__item {
+			padding-left: 0;
+			background: none;
+		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.top-bar-phone {
+		&__item {
+			margin-left: 0;
+			padding-left: 0;
+			font-size: 0.8571rem;
+			line-height: 16px;
+			background: none;
+
+			&:last-of-type {
+				display: none;
+			}
+		}
+	}
+
+	.social-link {
+		&__item {
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}

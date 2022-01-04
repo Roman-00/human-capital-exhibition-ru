@@ -1,0 +1,51 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after, *:active, *:focus, *:hover {
+	outline: none;
+	outline-offset: 0;
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: $regular;
+	line-height: 20px;
+	color: $text-color;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+
+.is-mobile {
+	display: none;
+
+	@media screen and (max-width: 575px) {
+		display: block;
+	}
+}
+
+.desctop-hidden {
+	display: none !important;
+
+	@media screen and (max-width: 860px) {
+		display: block !important;
+	}
+}
+
+.text-color-primary {
+	font-family: 'Roboto', sans-serif;
+	font-weight: $medium;
+	color: $primary;
+}

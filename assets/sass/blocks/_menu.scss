@@ -1,0 +1,26 @@
+.header-menu {
+	margin: 30px 0;
+}
+
+.menu-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0;
+	list-style: none;
+
+	&__item {
+		font-size: 1.2857rem;
+		line-height: 22px;
+		transition: all 0.3s;
+
+		a {
+			text-decoration: none;
+			color: $text-color;
+		}
+
+		&:hover a {
+			color: $primary;
+		}
+	}
+}
