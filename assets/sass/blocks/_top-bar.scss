@@ -1,0 +1,45 @@
+.top-bar {
+	position: relative;
+	padding-top: 20px;
+
+	&__menu {
+		width: 24px;
+		height: 24px;
+
+		img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.top-bar-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.top-bar-phone {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&__item {
+		display: block;
+		margin-left: 20px;
+		padding-left: 34px;
+		font-size: 1.2857rem;
+		font-weight: $regular;
+		line-height: 22px;
+		text-decoration: none;
+		background: url('/assets/images/phone.svg') no-repeat left center;
+		color: $text-color;
+		transition: all .3s;
+		
+		@media screen and (min-width: 1300px) {
+			&:hover {
+				color: $link-color;
+			}
+		}
+	}
+}

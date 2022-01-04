@@ -1,0 +1,25 @@
+.hero {
+	position: relative;
+}
+
+.hero-content {
+	&__block {
+		position: relative;
+		max-width: 100%;
+		min-height: 354px;
+		background: $darken-grey url('/assets/images/hero-bg.jpg') no-repeat;
+		background-size: contain;
+		border-radius: $medium-radius;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: $darken-grey;
+			border-radius: $medium-radius;
+		}
+	}
+}

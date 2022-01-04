@@ -1,0 +1,71 @@
+.header {
+	position: relative;
+	margin-top: 30px;
+}
+
+.header-exhibition-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	display: block;
+	max-width: 197px;
+	height: 62px;
+	text-decoration: none;
+}
+
+.header-exhibition-title {
+	max-width: 730px;
+	margin-left: 30px;
+
+	@media screen and (max-width: 1366px) {
+		max-width: 550px;
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1.7143rem;
+		line-height: 28px;
+
+		@media screen and (max-width: 1366px) {
+			font-size: 1.2857rem;
+			line-height: 22px;
+		}
+
+		&::after {
+			content: ' ';
+			position: relative;
+			display: block;
+			width: 2px;
+			height: 62px;
+			margin-right: 20px;
+			background-color: $primary;
+		}
+	}
+}
+
+.header-exhibition-date {
+	position: relative;
+	line-height: 26px;
+
+	&__number {
+		display: block;
+		font-size: 1.5714rem;
+		text-align: right;
+
+		@media screen and (max-width: 1366px) {
+			font-size: 1.2857rem;
+		}
+	}
+
+	&__venue {
+		display: block;
+		font-size: 1.1429rem;
+		text-align: right;
+	}
+}
