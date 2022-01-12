@@ -21,6 +21,10 @@
 			font-size: 0.8571rem;
 		}
 	} 
+
+	.menu-nav {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 860px) {
@@ -87,6 +91,32 @@
 				width: 24px;
 				height: 24px;
 			}
+		}
+	}
+
+	.hero-content {
+		&__block {
+			align-items: center;
+			justify-content: flex-start;
+			min-height: 250px;
+		}
+
+		&__block-timer-number {
+			font-size: 16px;
+			line-height: 20px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.hero-content {
+		&__block-timer-number {
+			font-size: 14px;
+			line-height: 18px;
 		}
 	}
 }

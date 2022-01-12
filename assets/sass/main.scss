@@ -2,6 +2,7 @@
 @import '_normalize';
 @import '_variables';
 @import '_settings';
+@import '_interface';
 @import '_grid';
 
 @import './blocks/top-bar';
@@ -9,6 +10,8 @@
 @import './blocks/header';
 @import './blocks/menu';
 @import './blocks/hero';
+@import './blocks/news';
+@import './blocks/footer';
 
 
 

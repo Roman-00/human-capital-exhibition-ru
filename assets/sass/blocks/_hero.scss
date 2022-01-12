@@ -5,10 +5,14 @@
 .hero-content {
 	&__block {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		max-width: 100%;
 		min-height: 354px;
+		padding: 20px;
 		background: $darken-grey url('/assets/images/hero-bg.jpg') no-repeat;
-		background-size: contain;
+		background-size: cover;
 		border-radius: $medium-radius;
 
 		&::after {
@@ -20,6 +24,38 @@
 			bottom: 0;
 			background: $darken-grey;
 			border-radius: $medium-radius;
+			z-index: 0;
 		}
+	}
+
+	&__block-timer {
+		display: flex;
+		align-items: center;
+	}
+
+	&__block-timer-number {
+		position: relative;
+		display: flex;
+		margin-right: 10px;
+		font-size: 32px;
+		line-height: 36px;
+		text-transform: lowercase;
+		color: $white;
+		z-index: 2;
+
+		#days {
+			margin-right: 5px;
+		}
+	}
+}
+
+.hero-parthners {
+	margin-top: 60px;
+	
+	&__title {
+		font-size: 18px;
+		line-height: 22px;
+		text-transform: uppercase;
+		color: $text-color;
 	}
 }
