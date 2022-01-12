@@ -22,5 +22,9 @@
 		&:hover a {
 			color: $primary;
 		}
+
+		@media screen and (max-width: 1260px) {
+			font-size: 14px;
+		}
 	}
 }

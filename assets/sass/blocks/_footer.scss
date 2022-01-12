@@ -1,0 +1,53 @@
+.footer {
+	position: relative;
+	margin-top: auto;
+	padding-bottom: 40px;
+}
+
+.footer-exhibition {
+	&__logo-images {
+		max-width: 120px;
+		height: 40px;
+	}
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&__info {
+		padding: 0 156px;
+		border-left: 2px solid $primary;
+		border-right: 2px solid $primary;
+	}
+
+	&__info-copyright,
+	&__info-policy {
+		display: block;
+		text-align: center;
+	}
+
+	&__info-copyright {
+		margin-bottom: 6px;
+		font-size: 16px;
+		line-height: 22px;
+		color: $text-color;
+	}
+
+	&__info-policy {
+		padding-left: 21px;
+		font-size: 14px;
+		line-height: 20px;
+		background: url('/assets/images/policy-lock.svg') no-repeat left center / contain;
+		color: $text-color;
+		transition: all .3s;
+		
+		@media screen and (min-width: 920px) {
+			&:hover {
+				color: $link-color;
+			}
+		} 
+	}
+}
