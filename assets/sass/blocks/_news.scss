@@ -18,7 +18,7 @@
 		padding-left: 34px;
 		font-size: 1rem;
 		line-height: 20px;
-		background: url('/assets/images/news-more.svg') no-repeat left center / contain;
+		background: url('../../assets/images/news-more.svg') no-repeat left center / contain;
 		color: $white;
 	}
 
@@ -103,7 +103,7 @@
 		padding-right: 24px;
 		font-size: 0.8571rem;
 		line-height: 20px;
-		background: url('/assets/images/link-arrow-right.svg') no-repeat right center / contain;
+		background: url('../../assets/images/link-arrow-right.svg') no-repeat right center / contain;
 		transition: all 0.3s;
 
 		@media screen and (min-width: 920px) {
@@ -145,10 +145,10 @@
 	}
 
 	&__button-prev {
-		background: url('/assets/images/arrow-left.svg') no-repeat center center / contain;
+		background: url('../../assets/images/arrow-left.svg') no-repeat center center / contain;
 	}
 
 	&__button-next {
-		background: url('/assets/images/arrow-right.svg') no-repeat center center / contain;
+		background: url('../../assets/images/arrow-right.svg') no-repeat center center / contain;
 	}
 }
