@@ -539,7 +539,7 @@ a {
   font-weight: 400;
   line-height: 22px;
   text-decoration: none;
-  background: url("/assets/images/phone.svg") no-repeat left center;
+  background: url("../../assets/images/phone.svg") no-repeat left center;
   color: #1a1a1a;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -732,7 +732,7 @@ a {
   max-width: 100%;
   min-height: 354px;
   padding: 20px;
-  background: rgba(26, 26, 26, 0.6) url("/assets/images/hero-bg.jpg") no-repeat;
+  background: rgba(26, 26, 26, 0.6) url("../../assets/images/hero-bg.jpg") no-repeat;
   background-size: cover;
   border-radius: 8px;
 }
@@ -813,7 +813,7 @@ a {
   padding-left: 34px;
   font-size: 1rem;
   line-height: 20px;
-  background: url("/assets/images/news-more.svg") no-repeat left center/contain;
+  background: url("../../assets/images/news-more.svg") no-repeat left center/contain;
   color: #ffffff;
 }
 
@@ -915,7 +915,7 @@ a {
   padding-right: 24px;
   font-size: 0.8571rem;
   line-height: 20px;
-  background: url("/assets/images/link-arrow-right.svg") no-repeat right center/contain;
+  background: url("../../assets/images/link-arrow-right.svg") no-repeat right center/contain;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -960,11 +960,11 @@ a {
 }
 
 .news-block-swiper__button-prev {
-  background: url("/assets/images/arrow-left.svg") no-repeat center center/contain;
+  background: url("../../assets/images/arrow-left.svg") no-repeat center center/contain;
 }
 
 .news-block-swiper__button-next {
-  background: url("/assets/images/arrow-right.svg") no-repeat center center/contain;
+  background: url("../../assets/images/arrow-right.svg") no-repeat center center/contain;
 }
 
 .footer {
