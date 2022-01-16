@@ -1,0 +1,43 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba($text-color, 0.5);
+	z-index: 99;
+
+	.popup-content {
+		position: relative;
+		width: 480px;
+		padding: 20px;
+		background: $white;
+
+		&__title {
+			margin-bottom: 20px;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.2857rem;
+			font-weight: 600;
+			line-height: 22px;
+			text-align: center;
+		}
+	}
+
+	.popup-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 24px;
+		height: 24px;
+		margin: 20px;
+		border: none;
+		background: transparent url('../../assets/images/close.svg') no-repeat center center;
+		outline: none;
+		cursor: pointer;
+	}
+}

@@ -116,44 +116,69 @@
 			<!-- /.header-exhibition-title__text desctop-hidden -->
 
 			<div class="header-menu">
-				<ul class="nav menu-nav">
+				<ul id="header-menu-nav" class="nav menu-nav">
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Саммит
 						</a>
+						<ul class="submenu">
+							<li>
+								<a href="#">О Саммите</a>
+							</li>
+							<li>
+								<a href="#">Программа Саммита</a>
+							</li>
+							<li>
+								<a href="#">Участники</a>
+							</li>
+							<li>
+								<a href="#">Отправить заявку</a>
+							</li>
+						</ul>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Выставка
 						</a>
+						<ul class="submenu">
+							<li>
+								<a href="#">О выставке</a>
+							</li>
+							<li>
+								<a href="#">План выставки</a>
+							</li>
+							<li>
+								<a href="#">Заявка на участие</a>
+							</li>
+						</ul>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Спикеры
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Регистрация
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Партнеры
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Официальная поддержка
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Медиа-центр
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#">
+						<a href="#" class="menu-nav__item-link">
 							Информационная поддержка
 						</a>
 					</li>
@@ -185,7 +210,7 @@
 
 							<div class="hero-content__block-timer-number">
 								<div>
-									<span id="days">
+									<span id="hours">
 										12
 									</span>
 								</div>
@@ -197,7 +222,7 @@
 
 							<div class="hero-content__block-timer-number">
 								<div>
-									<span id="days">
+									<span id="minutes">
 										58
 									</span>
 								</div>
@@ -209,7 +234,7 @@
 
 							<div class="hero-content__block-timer-number">
 								<div>
-									<span id="days">
+									<span id="seconds">
 										09
 									</span>
 								</div>
@@ -307,6 +332,40 @@
 											</div>
 											<!-- /.news-block__card -->
 										</div>
+
+										<!-- Slides -->
+										<div class="swiper-slide">
+											<div class="news-block__card">
+												<img src="assets/images/news2.jpg" alt="News 2" class="news-block__card-images">
+												<div class="news-block__card-content">
+													<span class="news-block__card-tag">
+														Новости
+													</span>
+
+													<h3 class="news-block__card-title">
+														ManpowerGroup – мировой 
+														лидер кадровой индустрии
+													</h3>
+
+													<p class="news-block__card-description">
+														предоставляющий эффективные решения и 
+														услуги в области управления
+													</p>
+
+													<div class="news-block__card-inter">
+														<a href="#" class="news-block__card-link-more">
+															Читать новость
+														</a>
+
+														<span class="news-block__card-date">
+															27.12.2021
+														</span>
+													</div>
+												</div>
+												<!-- /.news-block__card-content -->
+											</div>
+											<!-- /.news-block__card -->
+										</div>
 									</div>
 								</div>
 							</div>
@@ -318,9 +377,54 @@
 
 					<div class="hero-parthners">
 						<div class="hero-parthners-wrapper">
-							<div class="hero-parthners__title">
+							<h3 class="hero-parthners__title">
 								Главный партнер выставки
+							</h3>
+
+							<div class="hero-parthners__slider-wrapper">
+								<!-- Slider main container -->
+								<div class="swiper hero-parthners__swiper">
+									<!-- Additional required wrapper -->
+									<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide">
+											<a href="#" class="hero-parthners__block-logo">
+												<img src="assets/images/logo-parthners.png" alt="Manpower Group">
+												<!--p>Manpower Group</p -->
+											</a>
+											<!-- /.hero-parthners__block-logo -->
+										</div>
+										<!-- Slides -->
+										<div class="swiper-slide">
+											<a href="#" class="hero-parthners__block-logo">
+												<img src="assets/images/logo-parthners.png" alt="Manpower Group">
+											</a>
+											<!-- /.hero-parthners__block-logo -->
+										</div>
+										<!-- Slides -->
+										<div class="swiper-slide">
+											<a href="#" class="hero-parthners__block-logo">
+												<img src="assets/images/logo-parthners.png" alt="Manpower Group">
+											</a>
+											<!-- /.hero-parthners__block-logo -->
+										</div>
+										<!-- Slides -->
+										<div class="swiper-slide">
+											<a href="#" class="hero-parthners__block-logo">
+												<img src="assets/images/logo-parthners.png" alt="Manpower Group">
+											</a>
+											<!-- /.hero-parthners__block-logo -->
+										</div>
+									</div>
+								
+									<!-- If we need navigation buttons -->
+									<div class="hero-parthners__swiper-navigation">
+										<div class="hero-parthners__swiper-button-prev"></div>
+										<div class="hero-parthners__swiper-button-next"></div>
+									</div>
+								</div>
 							</div>
+							<!-- /.hero-parthners__slider-wrapper -->
 						</div>
 					</div>
 					<!-- /.hero-parthners -->
@@ -375,10 +479,129 @@
 	</footer>
 	<!-- /#footer.footer -->
 
+	<div class="popup">
+		<div class="popup-content">
+			<h3 class="popup-content__title">
+				Стать делегатом Саммита
+			</h3>
+			<button class="popup-close"></button>
+
+			<form class="form-registration form-registration-summit">
+				<div class="form-registration-group">
+					<label for="first-name" class="form-registration-label">
+						Ваше имя
+					</label>
+					<input type="text" id="first-name" class="form-registration-input" placeholder="Анна">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Ваша Фамилия
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="Васильева">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Ваша Должность
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="Корреспондент">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Ваш E-mail
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="vasileva@gmail.com">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Ваш Телефон
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="+7 (___) ___ - __ - __">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Название Компании
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="ИП Васильева">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Страна
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="Казахстан">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Город
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="Нур-Султан">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						Юридический адрес
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="Нур-Султан, ул. Гагарина, дом 32">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="last-name" class="form-registration-label">
+						БИН
+					</label>
+					<input type="text" id="last-name" class="form-registration-input" placeholder="012354780901">
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group__policy">
+					<div>
+						<input type="checkbox" id="policy" class="form-registration-group__policy-input">
+						<label for="last-name" class="form-registration-group__policy-label">
+							Я согласен с условиями обработки персональных данных
+						</label>
+					</div>
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<button class="form-registration-button">
+					зарегистрироваться
+				</button>
+			</form>
+			<!-- /.form-registration form-registration-summit -->
+		</div>
+	</div>
+	<!-- /.popup -->
+
 
 	<!-- Подключаем файлы со скриптами -->
-	<script src="assets/js/swiper-bundle.min.js"></script>
 	<!-- Подключаем слайдер -->
+	<script src="assets/js/swiper-bundle.min.js"></script>
+	<!-- Подключаем главный файл с скриптами -->
 	<script src="assets/js/main.js"></script>
 </body>
 </html>

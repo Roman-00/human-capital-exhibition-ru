@@ -1,0 +1,57 @@
+.form-registration {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.form-registration-group {
+	position: relative;
+	width: 100%;
+	margin-bottom: 28px;
+
+	&__policy {
+		width: 100%;
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+.form-registration-label {
+	position: absolute;
+	top: -8px;
+	left: 10px;
+	display: inline-block;
+	padding: 0 8px;
+	font-size: 0.7143rem;
+	line-height: 12px;
+	background-color: $white;
+	color: $text-color;
+	z-index: 2;
+}
+
+.form-registration-input {
+	position: relative;
+	width: 100%;
+	min-height: 38px;
+	padding: 0 20px;
+	border: 1px solid $input-border;
+	border-radius: $small-radius;
+	outline: none;
+
+	&::placeholder {
+		font-size: 0.8571rem;
+		line-height: 20px;
+		color: rgba($text-color, 0.2);
+	}
+
+	&:focus {
+		border-color: $input-focus;
+	}
+}
+
+.form-registration-button {
+	margin-top: 40px;
+}
