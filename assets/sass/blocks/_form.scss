@@ -17,6 +17,39 @@
 			align-items: center;
 		}
 	}
+
+	&__policy-label {
+		margin-left: 10px;
+		font-size: 0.8571rem;
+		line-height: 16px;
+		color: rgba($text-color, 0.5);
+	}
+
+	&__policy-input {
+		width: 20px;
+		height: 20px;
+		border: 1px solid $input-border;
+		border-radius: $small-radius;
+	}
+
+	&__errors {
+		position: absolute;
+		bottom: -18px;
+		left: 0;
+		font-size: 10px;
+		line-height: 14px;
+		color: $input-error;
+		z-index: 2;
+	}
+
+	&__errors-images {
+		position: absolute;
+		top: 50%;
+		right: 2%;
+		visibility: hidden;
+		transform: translateY(-50%);
+		transition: all 0.3s;
+	}
 }
 
 .form-registration-label {
@@ -53,5 +86,33 @@
 }
 
 .form-registration-button {
-	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 280px;
+	min-height: 40px;
+	margin: 40px auto 0 auto;
+	background: $link-color;
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: $small-radius;
+	cursor: pointer;
+}
+
+.form-registration-group-error {
+	.form-registration-input {
+		border: 1px solid $input-error;
+	}
+
+	.form-registration-group__errors-images {
+		visibility: visible;
+	}
+}
+
+.form-registration-group-succes {
+	.form-registration-input {
+		border: 1px solid $input-succes;
+	}
 }

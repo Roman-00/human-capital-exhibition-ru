@@ -10,6 +10,9 @@
 	align-items: center;
 	justify-content: center;
 	background: rgba($text-color, 0.5);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
 	z-index: 99;
 
 	.popup-content {
@@ -39,5 +42,10 @@
 		background: transparent url('../../assets/images/close.svg') no-repeat center center;
 		outline: none;
 		cursor: pointer;
+	}
+
+	&--active {
+		visibility: visible;
+		opacity: 1;
 	}
 }
