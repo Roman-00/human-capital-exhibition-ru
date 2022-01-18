@@ -16,6 +16,7 @@ import togglePopUp from './modules/togglePopUp';
 window.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
+	const hero = document.querySelector('#hero');
 	let deadline = '2022-09-21';
 
 	/**
@@ -23,24 +24,25 @@ window.addEventListener('DOMContentLoaded', () => {
 	 */
 	openSubMenu();
 
-	/**
-	 * * Слайдер новостей на главной странице
-	 */
-	newsSlider();
+	if (hero) {
+		/**
+		 * * Слайдер новостей на главной странице
+		 */
+		newsSlider();
 
-	/**
-	 * * Слайдер партнеров на главной странице
-	 */
-	parthnersSlider();
+		/**
+		 * * Слайдер партнеров на главной странице
+		 */
+		parthnersSlider();
 
-	/**
-	 * * Таймер на главной странице
-	 * 
-	 * @param selector {Selector: ID, ClassNames}
-	 * @param deadline {Data: String}
-	 */
-	timer('.hero-content__block-timer', deadline);
-
+		/**
+		 * * Таймер на главной странице
+		 * 
+		 * @param selector {Selector: ID, ClassNames}
+		 * @param deadline {Data: String}
+		 */
+		timer('.hero-content__block-timer', deadline);
+	}
 
 	/**
 	 * * Валидация и отправка данных через форму

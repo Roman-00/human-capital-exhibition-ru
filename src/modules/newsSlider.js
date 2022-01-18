@@ -16,7 +16,9 @@ const newsSlider = () => {
 	/**
 	 * * Добавляем пагинацию на страницу
 	 */
-	newsBlockInterface.insertAdjacentHTML('beforeend', createNewsSliderNavigation);
+	if (newsBlockInterface) {
+		newsBlockInterface.insertAdjacentHTML('beforeend', createNewsSliderNavigation);	
+	}
 
 	/**
 	 * * Активируем бесконечную прокрутку если новостей больше 2

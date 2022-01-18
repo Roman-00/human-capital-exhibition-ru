@@ -28,6 +28,10 @@
 }
 
 @media screen and (max-width: 1140px) {
+	.top-bar-language {
+		display: none;
+	}
+
 	.logo {
 		max-width: 100px;
 		min-height: 42px;

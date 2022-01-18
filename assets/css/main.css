@@ -30,6 +30,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -446,6 +454,67 @@ a {
   color: #245f6a;
 }
 
+.page-title {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+  font-size: 1.2857rem;
+  font-weight: bold;
+  line-height: 22px;
+  border: 1px dashed rgba(26, 26, 26, 0.2);
+  background: rgba(26, 26, 26, 0.2);
+  color: rgba(26, 26, 26, 0.7);
+}
+
+.page {
+  margin-bottom: 20px;
+}
+
+.page-text {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1429rem;
+  line-height: 24px;
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.page-text__title {
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7143rem;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.page-button {
+  width: 100%;
+  max-width: 280px;
+  min-height: 40px;
+  padding: 12px 0;
+  margin: 10px 0 30px;
+  font-size: 0.8571rem;
+  line-height: 16px;
+  text-transform: uppercase;
+  border: none;
+  background: #007bff;
+  border-radius: 4px;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 920px) {
+  .page-button:hover {
+    opacity: 0.7;
+  }
+}
+
 .button {
   padding: 8px;
   font-size: 12px;
@@ -549,6 +618,27 @@ a {
   .top-bar-phone__item:hover {
     color: #116acc;
   }
+}
+
+.top-bar-language {
+  margin: 0 auto 0 20px;
+}
+
+.top-bar-language__link {
+  font-size: 1.1429rem;
+  line-height: 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@media screen and (min-width: 920px) {
+  .top-bar-language__link:hover {
+    opacity: 0.8;
+  }
+}
+
+.top-bar-language__link--active {
+  font-weight: bold;
 }
 
 .social-link {
@@ -1385,6 +1475,84 @@ a {
   border: 1px solid #28a745;
 }
 
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  margin: 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: 8px 0px 40px rgba(26, 26, 26, 0.1);
+          box-shadow: 8px 0px 40px rgba(26, 26, 26, 0.1);
+  visibility: hidden;
+  z-index: 99;
+}
+
+.mobile-menu-content-interface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.mobile-menu-close {
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  background: transparent url("../../assets/images/close.svg") no-repeat center center;
+}
+
+.mobile-menu-language__link {
+  font-size: 12px;
+}
+
+.mobile-menu-language__link--active {
+  font-weight: bold;
+}
+
+.mobile-menu-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu-list__item {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.mobile-menu-list__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.mobile-menu-list__item a {
+  color: #1a1a1a;
+}
+
 @media screen and (max-width: 1420px) {
   .hero-content__block {
     -webkit-box-orient: vertical;
@@ -1416,6 +1584,9 @@ a {
 }
 
 @media screen and (max-width: 1140px) {
+  .top-bar-language {
+    display: none;
+  }
   .logo {
     max-width: 100px;
     min-height: 42px;
