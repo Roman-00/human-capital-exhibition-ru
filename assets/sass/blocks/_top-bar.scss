@@ -43,3 +43,22 @@
 		}
 	}
 }
+
+.top-bar-language {
+	margin: 0 auto 0 20px;
+	&__link {
+		font-size: 1.1429rem;
+		line-height: 20px;
+		transition: all .3s;
+
+		@media screen and (min-width: 920px) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&__link--active {
+		font-weight: bold;
+	}
+}
