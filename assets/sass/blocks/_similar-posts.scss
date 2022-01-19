@@ -1,0 +1,36 @@
+.similar-posts {
+	position: relative;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 10px 0;
+		border-bottom: 1px solid $input-border;
+		color: $text-color;
+		transition: all 0.3s;
+
+		@media screen and (min-width: 920px) {
+			&:hover .similar-posts__item-title  {
+				color: $link-color;
+			}
+		}
+	}
+
+	&__item-title {
+		margin: 5px 0;
+		font-size: 1.1429rem;
+		line-height: 24px;
+		transition: all 0.3s;
+	}
+
+	&__item-description {
+		display: block;
+		font-size: 0.8571rem;
+		line-height: 16px;
+		color: rgba($text-color, 0.7);
+		white-space: no-wrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

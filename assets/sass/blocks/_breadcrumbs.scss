@@ -1,0 +1,11 @@
+.breadcrumbs {
+	position: relative;
+	font-size: 0.8571rem;
+	line-height: 20px;
+
+	&__link {
+		&--active {
+			opacity: 0.8;
+		}
+	}
+}

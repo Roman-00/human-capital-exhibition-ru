@@ -1,0 +1,62 @@
+.share-social {
+	position: relative;
+
+	&__title {
+		margin-bottom: 20px;
+		font-size: 1.1429rem;
+		line-height: 24px;
+		text-transform: uppercase;
+		color: rgba($text-color, 0.7);
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		font-size: 1rem;
+		line-height: 20px;
+		color: $text-color;
+		transition: all 0.3s;
+
+		&::before {
+			content: '';
+			position: relative;
+			display: block;
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+			background: $input-border;
+			border-radius: $small-radius;
+		}
+
+		@media screen and (min-width: 920px) {
+			&:hover {
+				color: $link-color;
+			}
+		} 
+	}
+
+	&__link-vk {
+		&::before {
+			background: $input-border url('../../assets/images/social/vk.svg') no-repeat center center / contain;
+		}
+	}
+
+	&__link-facebook {
+		&::before {
+			background: $input-border url('../../assets/images/social/facebook.svg') no-repeat center center / contain;
+		}
+	}
+
+	&__link-twitter {
+		&::before {
+			background: $input-border url('../../assets/images/social/twitter.svg') no-repeat center center / contain;
+		}
+	}
+
+	&__link-linkedin {
+		&::before {
+			background: $input-border url('../../assets/images/social/linkedin.svg') no-repeat center center / contain;
+		}
+	}
+}
