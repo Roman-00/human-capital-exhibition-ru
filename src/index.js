@@ -12,11 +12,13 @@ import parthnersSlider from './modules/parthnersSlider';
 import timer from './modules/timer';
 import postForm from './modules/postForm';
 import togglePopUp from './modules/togglePopUp';
+import tooggleMenu from './modules/toogleMenu';
 
 window.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
 	const hero = document.querySelector('#hero');
+	const mobileMenuButton = document.querySelector('.top-bar__menu');
 	let deadline = '2022-09-21';
 
 	/**
@@ -42,6 +44,13 @@ window.addEventListener('DOMContentLoaded', () => {
 		 * @param deadline {Data: String}
 		 */
 		timer('.hero-content__block-timer', deadline);
+	}
+
+	/**
+	 * * Работа мобильного меню
+	 */
+	if (mobileMenuButton) {
+		tooggleMenu();
 	}
 
 	/**
