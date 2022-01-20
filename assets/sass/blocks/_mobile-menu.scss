@@ -2,64 +2,116 @@
 	position: fixed;
 	top: 0;
 	left: -100%;
-	width: 280px;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	padding: 0 10px;
-	margin: 0;
-	background-color: $white;
-	box-shadow: 8px 0px 40px rgba($text-color, 0.1);
-	visibility: hidden;
-	z-index: 99;
-}
-
-.mobile-menu-content-interface {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
-	padding: 20px 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction: row-reverse;
-}
-
-.mobile-menu-close {
-	width: 24px;
-	height: 24px;
-	border: none;
-	cursor: pointer;
-	background: transparent url('../../assets/images/close.svg') no-repeat center center;
-}
-
-.mobile-menu-language {
-	&__link {
-		font-size: 12px;
-	}
-
-	&__link--active {
-		font-weight: bold;
-	}
-}
-
-.mobile-menu-list {
-	padding: 0;
+	height: 100vh;
 	margin: 0;
-	list-style: none;
+	padding: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+	z-index: 10;
 
-	&__item {
-		margin-bottom: 12px;
-		font-size: 16px;
-		line-height: 20px;
-		
-		&:last-of-type {
-			margin-bottom: 0;
+	&__block {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 280px;
+		height: 100%;
+		padding: 20px;
+		background-color: $white;
+		transition: all 0.4s;
+		z-index: 10;
+	}
+
+	&__block-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 24px;
+		height: 24px;
+		margin: 20px;
+		border: none;
+		background: transparent url('../../assets/images/close.svg') no-repeat;
+		outline: none;
+		cursor: pointer;
+	}
+
+	&__block-language {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 26px 20px;
+	}
+
+	&__block-language-link {
+		font-size: 0.8571rem;
+		line-height: 16px;
+
+		&--active {
+			font-weight: bold;
+		}
+	}
+
+	&__list {
+		padding: 0;
+		list-style: none;
+
+		.menu-item-dop {
+			position: relative;
+			cursor: pointer;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 12px;
+				height: 12px;
+				background: url('../../assets/images/arrow-down.svg') no-repeat center center / contain;
+			}
 		}
 
-		a {
-			color: $text-color;
+		.menu-item {
+			margin-bottom: 20px;
+			font-size: 0.8571rem;
+			font-weight: bold;
+			line-height: 18px;
+			text-transform: uppercase;
+			
+			a {
+				color: $text-color;
+			}
+
+			.sub-menu {
+				max-height: 0;
+				overflow: auto;
+				transition: max-height .5s;
+
+				.menu-item {
+					margin-bottom: 10px;
+					text-transform: capitalize;
+				}
+
+				&--active {
+					max-height: 100%;
+				}
+			}
 		}
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $text-color;
+		opacity: .75;
+	}
+
+	&--active {
+		left: 0;
+		visibility: visible;
+		opacity: 1;
 	}
 }

@@ -1093,7 +1093,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 300px;
-  height: 360px;
+  height: 380px;
   margin-right: 30px;
   background: #ffffff;
   border-radius: 4px;
@@ -1111,6 +1111,17 @@ a {
 }
 
 .news-block__card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
   padding: 20px 16px;
 }
 
@@ -1481,78 +1492,125 @@ a {
   position: fixed;
   top: 0;
   left: -100%;
-  width: 280px;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.mobile-menu__block {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
-  margin: 0;
+  width: 280px;
+  height: 100%;
+  padding: 20px;
   background-color: #ffffff;
-  -webkit-box-shadow: 8px 0px 40px rgba(26, 26, 26, 0.1);
-          box-shadow: 8px 0px 40px rgba(26, 26, 26, 0.1);
-  visibility: hidden;
-  z-index: 99;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: 10;
 }
 
-.mobile-menu-content-interface {
+.mobile-menu__block-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  margin: 20px;
+  border: none;
+  background: transparent url("../../assets/images/close.svg") no-repeat;
+  outline: none;
+  cursor: pointer;
+}
+
+.mobile-menu__block-language {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 20px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  margin: 26px 20px;
 }
 
-.mobile-menu-close {
-  width: 24px;
-  height: 24px;
-  border: none;
-  cursor: pointer;
-  background: transparent url("../../assets/images/close.svg") no-repeat center center;
+.mobile-menu__block-language-link {
+  font-size: 0.8571rem;
+  line-height: 16px;
 }
 
-.mobile-menu-language__link {
-  font-size: 12px;
-}
-
-.mobile-menu-language__link--active {
+.mobile-menu__block-language-link--active {
   font-weight: bold;
 }
 
-.mobile-menu-list {
+.mobile-menu__list {
   padding: 0;
-  margin: 0;
   list-style: none;
 }
 
-.mobile-menu-list__item {
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 20px;
+.mobile-menu__list .menu-item-dop {
+  position: relative;
+  cursor: pointer;
 }
 
-.mobile-menu-list__item:last-of-type {
-  margin-bottom: 0;
+.mobile-menu__list .menu-item-dop::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: url("../../assets/images/arrow-down.svg") no-repeat center center/contain;
 }
 
-.mobile-menu-list__item a {
+.mobile-menu__list .menu-item {
+  margin-bottom: 20px;
+  font-size: 0.8571rem;
+  font-weight: bold;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.mobile-menu__list .menu-item a {
   color: #1a1a1a;
+}
+
+.mobile-menu__list .menu-item .sub-menu {
+  max-height: 0;
+  overflow: auto;
+  -webkit-transition: max-height .5s;
+  transition: max-height .5s;
+}
+
+.mobile-menu__list .menu-item .sub-menu .menu-item {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.mobile-menu__list .menu-item .sub-menu--active {
+  max-height: 100%;
+}
+
+.mobile-menu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  opacity: .75;
+}
+
+.mobile-menu--active {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
 }
 
 .detail-page {
