@@ -85,6 +85,17 @@
 	}
 }
 
+.form-registration-select {
+	width: 100%;
+	min-height: 38px;
+	padding: 0 15px;
+	font-size: 0.8571rem;
+	line-height: 20px;
+	border: 1px solid $input-border;
+	border-radius: $small-radius;
+	color: $text-color;
+}
+
 .form-registration-button {
 	display: flex;
 	justify-content: center;
@@ -99,10 +110,16 @@
 	outline: none;
 	border-radius: $small-radius;
 	cursor: pointer;
+
+	span {
+		display: block;
+		margin-left: 10px;
+	}
 }
 
 .form-registration-group-error {
-	.form-registration-input {
+	.form-registration-input,
+	.form-registration-select {
 		border: 1px solid $input-error;
 	}
 
@@ -112,7 +129,26 @@
 }
 
 .form-registration-group-succes {
-	.form-registration-input {
+	.form-registration-input,
+	.form-registration-select {
 		border: 1px solid $input-succes;
+	}
+}
+
+.loader {
+	border: 4px solid #f3f3f3; /* Light grey */
+	border-top: 4px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+	0% { 
+		transform: rotate(0deg); 
+	}
+	100% {
+		transform: rotate(360deg); 
 	}
 }

@@ -6,12 +6,10 @@
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	background: rgba($text-color, 0.5);
-	visibility: hidden;
-	opacity: 0;
 	transition: all 0.3s;
 	z-index: 99;
 
@@ -42,10 +40,5 @@
 		background: transparent url('../../assets/images/close.svg') no-repeat center center;
 		outline: none;
 		cursor: pointer;
-	}
-
-	&--active {
-		visibility: visible;
-		opacity: 1;
 	}
 }

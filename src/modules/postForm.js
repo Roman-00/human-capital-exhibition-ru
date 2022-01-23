@@ -1,72 +1,45 @@
+import validateForm from "./validateForm";
+
 /**
  * * Отправка данных с формы
  */
-const postForm = () => {
-	const form = document.querySelector('.form-registration-summit');
-	const regexpEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+const sendForm = (classForm) => {
+	const sendErrorMessage = 'Что-то пошло не так...';
+	const sendButtonMessage = 'зарегистрироваться';
+	const sendSuccesMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+	const sendLoadTextMessage = 'Отправляем данные';
+	const formRegistrationButton = document.querySelector('.form-registration-button');
+	const textButton = document.querySelector('.text-button');
+	const sendLoadForm = `<div class="loader"></div>`;
+	const fromSelected = document.getElementById('walck-of-life');
+	const fromSelectedInput = document.getElementById('input-province');
 	let isValidate = false;
+	let isLoading = false;
 
-	/**
-	 * * Отправляем данные на почту и в телеграм
-	 * 
-	 * @param body {Oblect} 
-	 */
-	const postData = async (body) => {
-		await fetch('/sever.php', {
+	const form = document.querySelector(classForm);
+
+	if (!validateForm()) {
+		isValidate = false;
+	}
+
+	if (isLoading) {
+		formRegistrationButton.insertAdjacentHTML('beforeend', sendLoadForm);
+	}
+
+	const sendDataPost = async(body) => {
+		await fetch('./server.php', {
 			method: 'POST',
-			headers: {
+			header: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(body)
 		});
-	};
+	}
 
-
-	/**
-	 * * Валидация полей
-	 * 
-	 * @param elem
-	 */
-	 const validateElem = (elem) => {
-		if (elem.id === 'user-first-name' || elem.id === 'user-last-name') {
-			if (elem.value === '') {
-				elem.required = true;
-				elem.closest('.form-registration-group').classList.add('form-registration-group-error');
-				elem.nextElementSibling.textContent = "Поле не заполнено!";
-			} else {
-				elem.closest('.form-registration-group').classList.remove('form-registration-group-error');
-				elem.nextElementSibling.textContent = "";
-			}
-		}
-
-		if (elem.id === 'user-email') {
-			if (elem.value === '') {
-				elem.closest('.form-registration-group').classList.add('form-registration-group-error');
-				elem.nextElementSibling.textContent = "Поле Обязательно для заполнения";
-			} else if (!regexpEmail.test(elem.value) && elem.value !== '') {
-				elem.closest('.form-registration-group').classList.add('form-registration-group-error');
-				elem.nextElementSibling.textContent = "Введите корректный email!";
-			} else {
-				elem.closest('.form-registration-group').classList.remove('form-registration-group-error');
-				elem.nextElementSibling.textContent = "";
-			}
-		}
-	};
-
-	/**
-	 * * Проверка поля ввода при blur еффекте
-	 */
-	for (let elem of form.elements) {
-		if (!elem.classList.contains('form-registration-group__policy-input') && elem.tagName !== 'BUTTON') {
-			elem.addEventListener('blur', () => {
-				validateElem(elem);
-			});
-		}
-	};
-
-	form,addEventListener('submit', (event) => {
+	form.addEventListener('submit', (event) => {
 		event.preventDefault();
-
+		textButton.textContent = sendLoadTextMessage;
+		isLoading = true;
 		const formData = new FormData(form);
 		const body = {};
 		formData.forEach((val, key) => {
@@ -76,35 +49,69 @@ const postForm = () => {
 		/**
 		 * * Проверка на пустое поле
 		 */
-		 for (let elem of form.elements) {
-			if (!elem.classList.contains('form-registration-group__policy-input') && elem.tagName !== 'BUTTON') {
-				if (elem.value === "") {
-					elem.nextElementSibling.textContent = "Данное поле не заполнено";
-					elem.closest('.form-registration-group').classList.add('form-registration-group-error');
-					isValidate = false;
-				} else {
-					elem.nextElementSibling.textContent = "";
-					elem.closest('.form-registration-group').classList.remove('form-registration-group-error');
-					isValidate = true;
+		if (form) {
+			for (let elem of form.elements) {
+				if (!elem.classList.contains('form-registration-group__policy-input') 
+					&& 
+					elem.tagName !== 'BUTTON'
+					&&
+					!elem.classList.contains('input-province')
+				) {
+					if (elem.value === "") {
+						elem.nextElementSibling.textContent = "Данное поле не заполнено";
+						elem.closest('.form-registration-group').classList.add('form-registration-group-error');
+						isValidate = false;
+					} else {
+						elem.nextElementSibling.textContent = "";
+						isValidate = true;
+					}
+				}
+				
+				if (fromSelected) {
+					if (elem.id === 'walck-of-life') {
+						if (fromSelectedInput.value === '') {
+							elem.nextElementSibling.textContent = "Вы не выбрали сферу деятельности";
+							elem.closest('.form-registration-group').classList.add('form-registration-group-error');
+							isValidate = false;
+						} else {
+							elem.nextElementSibling.textContent = '';
+							isValidate = true;
+						}
+					}
 				}
 			}
 		}
 
 		if (isValidate) {
 			if(form.querySelector('#policy').checked) {
-				postData(body)
-					.then((response) => {
-						console.log('response', response);
+				sendDataPost(body)
+					.then(response => {
+						if (response.status !== 200) {
+							isLoading = false;
+							throw new Error('status network not 200');
+						}
+						textButton.textContent = sendSuccesMessage;
+						form.reset();
+						setTimeout(() => {
+							textButton.textContent = sendButtonMessage;
+						}, 3000);
 					})
-					.catch((error) => {
-						console.log(error);
+					.catch(error => {
+						isLoading = false;
+						textButton.textContent = sendErrorMessage;
+						setTimeout(() => {
+							textButton.textContent = sendButtonMessage;
+						}, 3000);
+					})
+					.finally(() => {
+						isLoading = false;
 					});
-			}  else {
+			} else {
 				isValidate = false;
 				alert('Согласитесь с условиями');
 			}
 		}
-	});
-};
+	})
+}
 
-export default postForm;
+export default sendForm;
