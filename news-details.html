@@ -142,7 +142,7 @@
 								<a href="#">Участники</a>
 							</li>
 							<li>
-								<a href="#" class="popup-btn">Отправить заявку</a>
+								<a href="#" class="button-summit">Отправить заявку</a>
 							</li>
 						</ul>
 					</li>
@@ -158,7 +158,7 @@
 								<a href="#">План выставки</a>
 							</li>
 							<li>
-								<a href="#">Заявка на участие</a>
+								<a href="#" class="button-exhibition">Заявка на участие</a>
 							</li>
 						</ul>
 					</li>
@@ -168,7 +168,7 @@
 						</a>
 					</li>
 					<li class="menu-nav__item">
-						<a href="#" class="menu-nav__item-link popup-btn">
+						<a href="#" class="menu-nav__item-link button-exhibition">
 							Регистрация
 						</a>
 					</li>
@@ -241,7 +241,7 @@
 								<a href="exhibition.html">План выставки</a>
 							</li>
 							<li class="menu-item">
-								<a href="exhibition.html">Заявка на участие</a>
+								<a href="exhibition.html" class="button-exhibition">Заявка на участие</a>
 							</li>
 						</ul>
 					</li>
@@ -297,7 +297,7 @@
 					</div>
 
 					<div class="detail-page-content__grid">
-						<asside id="detail-page-content__aside-right">
+						<asside id="detail-page-content__aside-left">
 							<div class="share-social">
 								<h3 class="share-social__title">
 									Поделиться 
@@ -402,7 +402,7 @@
 							</a>
 						</div>
 						<!-- /.detail-page-content__info -->
-						<aside id="detail-page-content__aside-left">
+						<aside id="detail-page-content__aside-right">
 							<div class="similar-posts">
 								<a href="#" class="similar-posts__item">
 									<img src="assets/images/news1.jpg" alt="similar-posts" class="similar-posts__item-images">
@@ -489,7 +489,7 @@
 	</footer>
 	<!-- /#footer.footer -->
 
-	<div class="popup">
+	<div class="popup popup--summit">
 		<div class="popup-content">
 			<h3 class="popup-content__title">
 				Стать делегатом Саммита
@@ -497,6 +497,7 @@
 			<button class="popup-close"></button>
 
 			<form class="form-registration form-registration-summit">
+				<input type="hidden" id="form-input-hidden-name" name="form-name" value="Стать делегатом Саммита">
 				<div class="form-registration-group">
 					<label for="user-first-name" class="form-registration-label">
 						Ваше имя
@@ -609,7 +610,171 @@
 				<!-- /.form-registration-group -->
 
 				<button class="form-registration-button">
-					зарегистрироваться
+					<span class="text-button">
+						зарегистрироваться
+					</span>
+				</button>
+			</form>
+			<!-- /.form-registration form-registration-summit -->
+		</div>
+	</div>
+	<!-- /.popup -->
+
+	<div class="popup popup--exhibition">
+		<div class="popup-content">
+			<h3 class="popup-content__title">
+				Заявка на участие в выставке
+			</h3>
+			<button class="popup-close"></button>
+
+			<form class="form-registration form-registration-exhibition">
+				<input type="hidden" id="form-input-hidden-name" name="form-name" value="Заявка на участие в выставке">
+				<div class="form-registration-group">
+					<label for="user-first-name" class="form-registration-label">
+						Ваше имя
+					</label>
+					<input type="text" id="user-first-name" class="form-registration-input" name="user-first-name" placeholder="Анна">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-last-name" class="form-registration-label">
+						Ваша Фамилия
+					</label>
+					<input type="text" id="user-last-name" class="form-registration-input" name="user-last-name" placeholder="Васильева">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-position" class="form-registration-label">
+						Ваша Должность
+					</label>
+					<input type="text" id="user-position" class="form-registration-input" name="user-position" placeholder="Корреспондент">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-email" class="form-registration-label">
+						Ваш E-mail
+					</label>
+					<input type="text" id="user-email" class="form-registration-input" name="user-email" placeholder="vasileva@gmail.com">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-phone" class="form-registration-label">
+						Ваш Телефон
+					</label>
+					<input type="text" id="user-phone" class="form-registration-input" name="user-phone" placeholder="+7 (___) ___ - __ - __">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-company" class="form-registration-label">
+						Название Компании
+					</label>
+					<input type="text" id="user-company" class="form-registration-input" name="user-company" placeholder="ИП Васильева">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-country" class="form-registration-label">
+						Страна
+					</label>
+					<input type="text" id="user-country" class="form-registration-input" name="user-country" placeholder="Казахстан">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-city" class="form-registration-label">
+						Город
+					</label>
+					<input type="text" id="user-city" class="form-registration-input" name="user-city" placeholder="Нур-Султан">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-ur-address" class="form-registration-label">
+						Юридический адрес
+					</label>
+					<input type="text" id="user-ur-address" class="form-registration-input" name="user-ur-address" placeholder="Нур-Султан, ул. Гагарина, дом 32">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="user-bin" class="form-registration-label">
+						БИН
+					</label>
+					<input type="text" id="user-bin" class="form-registration-input" name="user-bin" placeholder="012354780901">
+					<span class="form-registration-group__errors"></span>
+					<img src="assets/images/errors.svg" alt="Error" class="form-registration-group__errors-images">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group">
+					<label for="walck-of-life" class="form-registration-label">
+						Сфера
+					</label>
+					<select id="walck-of-life" class="form-registration-select">
+						<option value="sphera" selected disabled>Сфера Деятельности</option>
+						<option value="gosOrgans">Государственные органы</option>
+						<option value="gosConsultanstDealership">Дипломатические и консульские представительства</option>
+						<option value="notDealershipOrganization">Неправительственные организации</option>
+						<option value="profUnionAssociation">Профессиональные союзы и ассоциации</option>
+						<option value="institutionsDevelopment">Институты развития</option>
+						<option value="foodIndustry">Пищевая промышленность</option>
+						<option value="transportLogistic">Транспорт и логистика</option>
+						<option value="itTelecommunications">IT и телекоммуникации</option>
+						<option value="fuelIndustry">Топливная промышленность</option>
+						<option value="energy">Энергетика</option>
+						<option value="mechanicalEngineering">Машиностроение</option>
+						<option value="healthSocial">Здравоохранение, физическая культура и социальное обеспечение</option>
+						<option value="education">Образование</option>
+						<option value="cultureArt">Культура и искусство</option>
+						<option value="scienceService">Наука и научное обслуживание</option>
+						<option value="funds">Финансы, кредит, страхование, пенсионное обеспечение</option>
+						<option value="building">Строительство и архитектура</option>
+						<option value="consulting">Консалтинг</option>
+						<option value="news">СМИ</option>
+					</select>
+					<span class="form-registration-group__errors"></span>
+					<input type="hidden" class="input-province" id="input-province" name="province">
+				</div>
+				<!-- /.form-registration-group -->
+
+				<div class="form-registration-group__policy">
+					<div>
+						<input type="checkbox" id="policy" class="form-registration-group__policy-input">
+						<label for="policy" class="form-registration-group__policy-label">
+							Я согласен с условиями обработки персональных данных
+						</label>
+					</div>
+					<span class="form-registration-group__errors"></span>
+				</div>
+				<!-- /.form-registration-group -->
+
+				<button class="form-registration-button">
+					<span class="text-button">
+						зарегистрироваться
+					</span>
 				</button>
 			</form>
 			<!-- /.form-registration form-registration-summit -->

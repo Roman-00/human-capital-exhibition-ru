@@ -9,9 +9,11 @@ import 'fetch-polyfill';
 import openSubMenu from './modules/openSubMenu';
 import newsSlider from './modules/newsSlider';
 import parthnersSlider from './modules/parthnersSlider';
+import mediaSwiper from './modules/mediaSwiper';
 import timer from './modules/timer';
-import postForm from './modules/postForm';
-import togglePopUp from './modules/togglePopUp';
+import validateForm from './modules/validateForm';
+import sendForm from './modules/postForm';
+import modals from "./modules/modals";
 import tooggleMenu from './modules/toogleMenu';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	const hero = document.querySelector('#hero');
 	const mobileMenuButton = document.querySelector('.top-bar__menu');
+	const pageMedia = document.querySelector('.page-media');
 	let deadline = '2022-09-21';
 
 	/**
@@ -54,12 +57,23 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	/**
-	 * * Валидация и отправка данных через форму
+	 * * Слайдер в на странице медиа-центр
 	 */
-	postForm();
+	if (pageMedia) {
+		mediaSwiper();
+	}
+
+	validateForm('.form-registration-exhibition');
+	validateForm('.form-registration-summit');
 
 	/**
-	 * * Модальное окно с регистрацией
+	 * * Валидация и отправка данных через форму
 	 */
-	 togglePopUp();
+	sendForm('.form-registration-exhibition');
+	sendForm('.form-registration-summit');
+
+	/**
+	 * * Модальное окно
+	 */
+	modals();
 });

@@ -38,11 +38,16 @@
 		position: relative;
 		display: flex;
 		margin-right: 10px;
-		font-size: 32px;
+		font-size: 2.2857rem;
 		line-height: 36px;
 		text-transform: lowercase;
 		color: $white;
 		z-index: 2;
+
+		@media screen and (max-width: 1420px) {
+			font-size: 1.7143rem;
+			line-height: 28px;
+		}
 
 		#days {
 			margin-right: 5px;
